@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fastly-rails flash bugs</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Books', books_path %>
+    <div id="flashes">
+      <h1>Flashes</h1>
+      <% flash.each do |name, message| -%>
+        <%= name %>: <%= message %>
+      <% end -%>
+    </div>
+    <%= yield %>
+  </body>
+</html>

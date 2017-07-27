@@ -1,0 +1,16 @@
+<div id="books">
+  <h1>Books</h1>
+  <%= link_to "Create another book", { :action => :create }, :method => :post %>
+
+  <br>
+  <br>
+  <% @books.each do |book| -%>
+    <%= book.title %>
+    <br>
+    <%= book.author %>
+    <br>
+    <%= link_to 'Delete',  book,  method: :delete %>
+    <br>
+    <br>
+  <% end -%>
+</div>
